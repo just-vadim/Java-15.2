@@ -3,7 +3,7 @@ package ru.netology.manager;
 import java.util.*;
 
 public class FileOpenManager {
-    private Map<String, String> entity = new HashMap();
+    private Map<String, String> entity;
 
     public FileOpenManager(Map<String, String> entity) {
         this.entity = entity;
