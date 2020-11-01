@@ -2,8 +2,8 @@ package ru.netology.manager;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,15 +44,15 @@ class ZeroItemsFileOpenManagerTest {
 
     @Test
     public void shouldNotGetRegisteredExtensions() {
-        ArrayList<String> expected = new ArrayList<>(){};
-        ArrayList<String> actual = manager.getRegisteredExtensions();
+        List<String> expected = List.of();
+        List<String> actual = manager.getRegisteredExtensions();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotGetBindedApps() {
-        ArrayList<String> expected = new ArrayList<>(){};
-        ArrayList<String> actual = manager.getBindedApps();
+        List<String> expected = List.of();
+        List<String> actual = manager.getBindedApps();
         assertEquals(expected, actual);
     }
 }

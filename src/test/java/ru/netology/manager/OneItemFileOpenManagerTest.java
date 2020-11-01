@@ -39,7 +39,6 @@ class OneItemFileOpenManagerTest {
     @Test
     public void shouldRemoveBinding() {
         HashMap<String, String> temp = new HashMap<>();
-        temp.put("html".toLowerCase(), null);
 
         manager.removeBinding("html");
 
@@ -50,15 +49,15 @@ class OneItemFileOpenManagerTest {
 
     @Test
     public void shouldGetRegisteredExtensions() {
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("html".toLowerCase()));
-        ArrayList<String> actual = manager.getRegisteredExtensions();
+        List<String> expected = List.of("html".toLowerCase());
+        List<String> actual = manager.getRegisteredExtensions();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldGetBindedApps() {
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("Google Chrome".toLowerCase()));
-        ArrayList<String> actual = manager.getBindedApps();
+        List<String> expected = List.of("Google Chrome".toLowerCase());
+        List<String> actual = manager.getBindedApps();
         assertEquals(expected, actual);
     }
 }

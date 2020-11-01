@@ -18,13 +18,11 @@ public class FileOpenManager {
     }
 
     public void removeBinding(String extension) {
-        if (entity.containsKey(extension.toLowerCase())){
-            entity.put(extension.toLowerCase(), null);
-        }
+        entity.remove(extension);
     }
 
-    public ArrayList<String> getRegisteredExtensions() {
-        ArrayList<String> result = new ArrayList<>();
+    public List<String> getRegisteredExtensions() {
+        List<String> result = new ArrayList<>();
         for (Map.Entry<String, String> entry : entity.entrySet()) {
             if (entry.getValue() != null) {
                 result.add(entry.getKey().toLowerCase());
@@ -34,8 +32,8 @@ public class FileOpenManager {
         return result;
     }
 
-    public ArrayList<String> getBindedApps() {
-        ArrayList<String> result = new ArrayList<>();
+    public List<String> getBindedApps() {
+        List<String> result = new ArrayList<>();
         for (Map.Entry<String, String> entry : entity.entrySet()) {
             if (entry.getKey() != null) {
                 result.add(entry.getValue().toLowerCase());

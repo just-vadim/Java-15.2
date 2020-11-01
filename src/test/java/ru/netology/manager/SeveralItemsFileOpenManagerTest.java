@@ -36,8 +36,7 @@ class SeveralItemsFileOpenManagerTest {
     public void shouldRemoveBinding() {
         HashMap<String, String> temp = new HashMap<>();
         temp.put("html".toLowerCase(), "Google Chrome".toLowerCase());
-        temp.put("docx".toLowerCase(), "Microsoft Word".toLowerCase());
-        temp.put("psd".toLowerCase(), null);
+        temp.put("docx".toLowerCase(), "Microsoft Word".toLowerCase());;
 
         manager.removeBinding("psd");
 
@@ -62,17 +61,15 @@ class SeveralItemsFileOpenManagerTest {
 
     @Test
     public void shouldGetRegisteredExtensions() {
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("docx".toLowerCase(), "html".toLowerCase(), "psd".toLowerCase()));
-        Collections.sort(expected);
-        ArrayList<String> actual = manager.getRegisteredExtensions();
+        List<String> expected = List.of("docx".toLowerCase(), "html".toLowerCase(), "psd".toLowerCase());
+        List<String> actual = manager.getRegisteredExtensions();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldGetBindedApps() {
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("Adobe Photoshop".toLowerCase(), "Google Chrome".toLowerCase(), "Microsoft Word".toLowerCase()));
-        Collections.sort(expected);
-        ArrayList<String> actual = manager.getBindedApps();
+        List<String> expected = List.of("Adobe Photoshop".toLowerCase(), "Google Chrome".toLowerCase(), "Microsoft Word".toLowerCase());
+        List<String> actual = manager.getBindedApps();
         assertEquals(expected, actual);
     }
 }
